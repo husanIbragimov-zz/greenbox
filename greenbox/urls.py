@@ -49,11 +49,11 @@ urlpatterns = i18n_patterns(
     path('about-company/', include('apps.company.api.urls')),
     path('contact/', include('apps.contact.api.urls')),
     path('work/', include('apps.work.api.urls')),
+    path('mission-vision/', include('apps.mission_vision.api.urls')),
+    path('study/', include('apps.study.api.urls')),
+    path('service/', include('apps.service.api.urls')),
 
     # path('certificate/', include('apps.certificate.api.urls')),
-    # path('mission-vision/', include('apps.mission_vision.api.urls')),
-    # path('service/', include('apps.service.api.urls')),
-    # path('study/', include('apps.study.api.urls')),
     # path('visa/', include('apps.visa.api.urls')),
 
     # tokens

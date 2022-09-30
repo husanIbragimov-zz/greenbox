@@ -1,20 +1,21 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class Contact(models.Model):
     DEPARTMENT = (
-        (0, 'None'),
-        (1, 'University'),
-        (2, 'Work'),
-        (3, 'Study'),
-        (4, 'Order'),
+        (0, _('None')),
+        (1, _('University')),
+        (2, _('Work')),
+        (3, _('Study')),
+        (4, _('Order')),
     )
 
     STATUS = (
-        (0, 'NEW'),
-        (1, 'PROCESS'),
-        (2, 'CANCELED'),
-        (3, 'FINISHED'),
+        (0, _('NEW')),
+        (1, _('PROCESS')),
+        (2, _('CANCELED')),
+        (3, _('FINISHED')),
     )
 
     class Meta:

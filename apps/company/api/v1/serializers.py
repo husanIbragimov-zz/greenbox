@@ -6,7 +6,7 @@ class BackgroundSerializer(serializers.ModelSerializer):
     status_display = serializers.SerializerMethodField(read_only=True)
 
     def get_status_display(self, obj):
-        return obj.get_lang_display()
+        return obj.get_status_display()
 
     class Meta:
         model = Background

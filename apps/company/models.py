@@ -5,10 +5,10 @@ from django.utils.translation import gettext_lazy as _
 
 class Background(models.Model):
     STATUS = (
-        (0, 'NONE'),
-        (1, 'TOP'),
-        (2, 'MIDDLE'),
-        (3, 'BOTTOM'),
+        (0, _('NONE')),
+        (1, _('TOP')),
+        (2, _('MIDDLE')),
+        (3, _('BOTTOM')),
     )
 
     class Meta:

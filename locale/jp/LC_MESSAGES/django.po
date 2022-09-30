@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-29 15:51+0500\n"
+"POT-Creation-Date: 2022-09-30 15:30+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,6 +61,22 @@ msgstr ""
 msgid "Yaratilgan sanasi"
 msgstr ""
 
+#: apps/company/models.py:8
+msgid "NONE"
+msgstr ""
+
+#: apps/company/models.py:9
+msgid "TOP"
+msgstr ""
+
+#: apps/company/models.py:10
+msgid "MIDDLE"
+msgstr ""
+
+#: apps/company/models.py:11
+msgid "BOTTOM"
+msgstr ""
+
 #: apps/company/models.py:19
 msgid "Background"
 msgstr ""
@@ -102,6 +118,53 @@ msgstr ""
 
 #: apps/company/models.py:79
 msgid "Certificate title"
+msgstr ""
+
+#: apps/contact/models.py:7
+#: venv/lib/python3.8/site-packages/modeltranslation/widgets.py:26
+msgid "None"
+msgstr ""
+
+#: apps/contact/models.py:8
+msgid "University"
+msgstr ""
+
+#: apps/contact/models.py:9
+msgid "Work"
+msgstr ""
+
+#: apps/contact/models.py:10
+msgid "Study"
+msgstr ""
+
+#: apps/contact/models.py:11
+#: venv/lib/python3.8/site-packages/django/forms/formsets.py:483
+#: venv/lib/python3.8/site-packages/django/forms/formsets.py:490
+msgid "Order"
+msgstr ""
+
+#: apps/contact/models.py:15
+msgid "NEW"
+msgstr ""
+
+#: apps/contact/models.py:16
+msgid "PROCESS"
+msgstr ""
+
+#: apps/contact/models.py:17
+msgid "CANCELED"
+msgstr ""
+
+#: apps/contact/models.py:18
+msgid "FINISHED"
+msgstr ""
+
+#: apps/service/models.py:7
+msgid "Legal advice"
+msgstr ""
+
+#: apps/service/models.py:8
+msgid "Starting Business"
 msgstr ""
 
 #: greenbox/settings.py:168
@@ -673,11 +736,6 @@ msgid "Please submit at least %(num)d form."
 msgid_plural "Please submit at least %(num)d forms."
 msgstr[0] ""
 msgstr[1] ""
-
-#: venv/lib/python3.8/site-packages/django/forms/formsets.py:483
-#: venv/lib/python3.8/site-packages/django/forms/formsets.py:490
-msgid "Order"
-msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/forms/formsets.py:496
 msgid "Delete"
@@ -1309,8 +1367,4 @@ msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/views/templates/default_urlconf.html:249
 msgid "Connect, get help, or contribute"
-msgstr ""
-
-#: venv/lib/python3.8/site-packages/modeltranslation/widgets.py:26
-msgid "None"
 msgstr ""

@@ -8,6 +8,7 @@ from .serializers import BackgroundSerializer, ArticleSerializer, AboutSerialize
 class BackgroundListAPIView(generics.ListAPIView):
     queryset = Background.objects.all()
     serializer_class = BackgroundSerializer
+    pagination_class = None
 
 
 class BackgroundRetrieveAPIView(generics.RetrieveAPIView):
@@ -41,6 +42,7 @@ class ArticleRetrieveAPIView(generics.RetrieveAPIView):
 class SearchArticleListAPIView(generics.ListAPIView):
     queryset = Article.objects.filter(is_active=True).order_by('-id')
     serializer_class = ArticleSerializer
+    pagination_class = None
 
     def get_queryset(self):
         qs = self.queryset.all()

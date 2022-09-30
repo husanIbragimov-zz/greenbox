@@ -2,21 +2,6 @@ from django.db import models
 from apps.company.models import Background
 
 
-class Work(models.Model):
-    class Meta:
-        verbose_name = "Work"
-        verbose_name_plural = "1.0. Work"
-
-    title = models.CharField(max_length=100)
-    description = models.TextField()
-    image = models.ImageField(upload_to='work/images')
-    background = models.ForeignKey(Background, on_delete=models.CASCADE, null=True)
-    is_active = models.BooleanField(default=True)
-
-    def __str__(self):
-        return self.title
-
-
 class Category(models.Model):
     class Meta:
         verbose_name = "Categories"
@@ -25,6 +10,22 @@ class Category(models.Model):
     title = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+
+class Work(models.Model):
+    class Meta:
+        verbose_name = "Work"
+        verbose_name_plural = "1.0. Work"
+
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='work/images')
+    background = models.ForeignKey(Background, on_delete=models.CASCADE, null=True)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title

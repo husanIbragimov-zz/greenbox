@@ -31,6 +31,7 @@ class VisaRetrieveAPIView(generics.RetrieveAPIView):
 class JobTypeListAPIView(generics.ListAPIView):
     queryset = JobType.objects.filter(is_active=True).order_by('-id')
     serializer_class = JopTypeSerializers
+    pagination_class = None
 
 
 class JobTypeRetrieveAPIView(generics.RetrieveAPIView):
@@ -42,6 +43,7 @@ class JobTypeRetrieveAPIView(generics.RetrieveAPIView):
 class ProgrammingLanguagesListAPIView(generics.ListAPIView):
     queryset = ProgrammingLanguages.objects.filter(is_active=True).order_by('-id')
     serializer_class = ProgrammingLanguagesSerializer
+    pagination_class = None
 
 
 class ProgrammingLanguagesRetrieveAPIView(generics.RetrieveAPIView):
@@ -53,6 +55,7 @@ class ProgrammingLanguagesRetrieveAPIView(generics.RetrieveAPIView):
 class SpecialtyListAPIView(generics.ListAPIView):
     queryset = Specialty.objects.filter(is_active=True).order_by('-id')
     serializer_class = SpecialitySerializer
+    pagination_class = None
 
 
 class SpecialtyRetrieveAPIView(generics.RetrieveAPIView):
@@ -64,6 +67,7 @@ class SpecialtyRetrieveAPIView(generics.RetrieveAPIView):
 class FrameworkListAPIView(generics.ListAPIView):
     queryset = Framework.objects.filter(is_active=True).order_by('-id')
     serializer_class = FrameworkSerializer
+    pagination_class = None
 
 
 class FrameworkRetrieveAPIView(generics.RetrieveAPIView):
@@ -75,6 +79,7 @@ class FrameworkRetrieveAPIView(generics.RetrieveAPIView):
 class ExpertiseLevelListAPIView(generics.ListAPIView):
     queryset = ExpertiseLevel.objects.filter(is_active=True).order_by('-id')
     serializer_class = ExpertiseLevelSerializer
+    pagination_class = None
 
 
 class ExpertiseLevelRetrieveAPIView(generics.RetrieveAPIView):
@@ -86,6 +91,7 @@ class ExpertiseLevelRetrieveAPIView(generics.RetrieveAPIView):
 class WorkingConditionAndBenefitListAPIView(generics.ListAPIView):
     queryset = WorkingConditionAndBenefit.objects.filter(is_active=True).order_by('-id')
     serializer_class = WorkingConditionAndBenefitSerializer
+    pagination_class = None
 
 
 class WorkingConditionAndBenefitRetrieveAPIView(generics.RetrieveAPIView):
@@ -118,8 +124,8 @@ class JobFilterListAPIView(generics.ListAPIView):
             queryset_list = queryset_list.filter(
                 Q(jop_type__title__icontains=query) |
                 Q(speciality__title__icontains=query) |
-                Q(programming_language__title__icontains=query) |
                 Q(frameworks__title__icontains=query) |
+                Q(programming_language__title__icontains=query) |
                 Q(working_conditions_and_benefits__title__icontains=query)
             )
         return queryset_list

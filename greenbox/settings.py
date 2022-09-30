@@ -182,8 +182,10 @@ MODELTRANSLATION_TRANSLATION_FILES = (
     # translator apps
     'apps.company.translations',
     'apps.work.translations',
-
-    # 'apps.contact.models',
+    'apps.mission_vision.translations',
+    'apps.study.translations',
+    'apps.contact.models',
+    'apps.service.translations',
 )
 
 PARLER_LANGUAGES = {
