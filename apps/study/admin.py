@@ -15,15 +15,15 @@ class UniversityAdmin(TranslationAdmin):
 
 
 class CategoryAdmin(TranslationAdmin):
-    pass
+    list_display = ('id', 'title', 'is_active')
 
 
 class StudyAdmin(TranslationAdmin):
-    pass
+    list_display = ('id', 'title', 'is_active')
 
 
 class StudyBlogAdmin(TranslationAdmin):
-    pass
+    list_display = ('id', 'title', 'is_active')
 
 
 admin.site.register(University, UniversityAdmin)
