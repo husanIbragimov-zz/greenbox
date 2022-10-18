@@ -11,7 +11,7 @@ class CategoryStudySerializer(serializers.ModelSerializer):
 class StudySerializer(serializers.ModelSerializer):
     class Meta:
         model = Study
-        fields = ('id', 'title', 'image', 'background_image', 'description')
+        fields = ('id', 'category', 'title', 'image', 'background', 'description')
 
 
 class StudyBlogSerializer(serializers.ModelSerializer):
@@ -22,7 +22,7 @@ class StudyBlogSerializer(serializers.ModelSerializer):
             'category',
             'title',
             'image',
-            'background',
+            'background_image',
             'description',
         )
 

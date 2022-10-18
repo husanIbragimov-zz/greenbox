@@ -1,5 +1,5 @@
 from modeltranslation.translator import translator, TranslationOptions
-from apps.work.models import Work, Category, Visa, Job
+from apps.work.models import Work, Category, WorkVisa, InternVisa, Job
 
 
 class WorkTranslationOptions(TranslationOptions):
@@ -10,8 +10,12 @@ class CategoryTranslationOptions(TranslationOptions):
     fields = ('title',)
 
 
-class VisaTranslationOptions(TranslationOptions):
-    fields = ('category', 'background', 'title', 'description')
+class WorkVisaTranslationOptions(TranslationOptions):
+    fields = ('background', 'title', 'description')
+
+
+class InternVisaTranslationOptions(TranslationOptions):
+    fields = ('background', 'title', 'description')
 
 
 class JobTranslationOptions(TranslationOptions):
@@ -20,5 +24,6 @@ class JobTranslationOptions(TranslationOptions):
 
 translator.register(Work, WorkTranslationOptions)
 translator.register(Category, CategoryTranslationOptions)
-translator.register(Visa, VisaTranslationOptions)
+translator.register(WorkVisa, WorkVisaTranslationOptions)
+translator.register(InternVisa, InternVisaTranslationOptions)
 translator.register(Job, JobTranslationOptions)

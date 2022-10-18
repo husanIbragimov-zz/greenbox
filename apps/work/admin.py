@@ -1,6 +1,6 @@
 from django.contrib import admin
 from apps.work.models import Category, Work, ExpertiseLevel, WorkingConditionAndBenefit, Job, Specialty, Framework, \
-    ProgrammingLanguages, JobType, Visa
+    ProgrammingLanguages, JobType, WorkVisa,InternVisa
 from modeltranslation.admin import TranslationAdmin
 
 
@@ -16,6 +16,10 @@ class VisaAdmin(TranslationAdmin):
     list_display = ('title', 'created_at', 'is_active')
 
 
+class InternVisaAdmin(TranslationAdmin):
+    list_display = ('title', 'created_at', 'is_active')
+
+
 class JobAdmin(TranslationAdmin):
     list_display = ('id', 'title', 'industry', 'speciality', 'is_active')
     filter_horizontal = ('frameworks', 'working_conditions_and_benefits')
@@ -23,7 +27,8 @@ class JobAdmin(TranslationAdmin):
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Work, WorkAdmin)
-admin.site.register(Visa, VisaAdmin)
+admin.site.register(WorkVisa, VisaAdmin)
+admin.site.register(InternVisa, InternVisaAdmin)
 admin.site.register(JobType)
 admin.site.register(ProgrammingLanguages)
 admin.site.register(Specialty)

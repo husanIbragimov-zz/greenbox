@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from apps.work.models import Category, Work, ExpertiseLevel, Framework, JobType, WorkingConditionAndBenefit, Job, \
-    Specialty, ProgrammingLanguages, Visa
+    Specialty, ProgrammingLanguages, WorkVisa, InternVisa
 
 
 class WorkSerializer(serializers.ModelSerializer):
@@ -16,13 +16,23 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class VisaSerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
-
     class Meta:
-        model = Visa
+        model = WorkVisa
         fields = (
             'id',
-            'category',
+            'title',
+            'image',
+            'background_image',
+            'description',
+            'created_at'
+        )
+
+
+class InternSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = InternVisa
+        fields = (
+            'id',
             'title',
             'image',
             'background_image',

@@ -1,7 +1,7 @@
 from django.db.models import Q
 from rest_framework import generics, permissions, filters
 from apps.work.models import Category, Work, Specialty, WorkingConditionAndBenefit, Framework, Job, JobType, \
-    ExpertiseLevel, ProgrammingLanguages, Visa
+    ExpertiseLevel, ProgrammingLanguages, WorkVisa, InternVisa
 from .serializers import CategorySerializer, WorkSerializer, JopTypeSerializers, ProgrammingLanguagesSerializer, \
     SpecialitySerializer, FrameworkSerializer, ExpertiseLevelSerializer, WorkingConditionAndBenefitSerializer, \
     JobSerializer, VisaSerializer
@@ -18,12 +18,23 @@ class CategoryListAPIView(generics.ListAPIView):
 
 
 class VisaListAPIView(generics.ListAPIView):
-    queryset = Visa.objects.filter(is_active=True).order_by('-id')
+    queryset = WorkVisa.objects.filter(is_active=True).order_by('-id')
     serializer_class = VisaSerializer
 
 
 class VisaRetrieveAPIView(generics.RetrieveAPIView):
-    queryset = Visa.objects.all()
+    queryset = WorkVisa.objects.all()
+    serializer_class = VisaSerializer
+    lookup_field = 'pk'
+
+
+class InternVisaListAPIView(generics.ListAPIView):
+    queryset = InternVisa.objects.filter(is_active=True).order_by('-id')
+    serializer_class = VisaSerializer
+
+
+class InternVisaRetrieveAPIView(generics.RetrieveAPIView):
+    queryset = InternVisa.objects.all()
     serializer_class = VisaSerializer
     lookup_field = 'pk'
 

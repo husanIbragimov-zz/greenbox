@@ -31,12 +31,28 @@ class Work(models.Model):
         return self.title
 
 
-class Visa(models.Model):
+class WorkVisa(models.Model):
     class Meta:
-        verbose_name = "Visas"
-        verbose_name_plural = "1.2. Visas"
+        verbose_name = "Work Visas"
+        verbose_name_plural = "1.2. Work Visas"
 
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    background = models.ForeignKey(Background, on_delete=models.SET_NULL, null=True)
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='work/visa/images/')
+    background_image = models.ImageField(upload_to='work/backgrounds/')
+    description = models.TextField()
+    is_active = models.BooleanField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+
+class InternVisa(models.Model):
+    class Meta:
+        verbose_name = "Intern Visas"
+        verbose_name_plural = "1.3. Intern Visas"
+
     background = models.ForeignKey(Background, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='work/visa/images/')

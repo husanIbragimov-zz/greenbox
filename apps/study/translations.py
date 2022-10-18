@@ -7,7 +7,7 @@ class CategoryTranslationOptions(TranslationOptions):
 
 
 class StudyTranslationOptions(TranslationOptions):
-    fields = ('title', 'description')
+    fields = ('title', 'description', 'background')
 
 
 class StudyBlogTranslationOptions(TranslationOptions):

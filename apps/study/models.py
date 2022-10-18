@@ -20,9 +20,10 @@ class Study(models.Model):
         verbose_name = "Study"
         verbose_name_plural = "2. Study"
 
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=100)
-    background_image = models.ImageField(upload_to='study/base/')
-    image = models.ImageField(upload_to='study/base/')
+    image = models.ImageField(upload_to='study/base/', null=True)
+    background = models.ForeignKey(Background, on_delete=models.CASCADE, null=True)
     description = models.TextField()
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
@@ -39,7 +40,7 @@ class StudyBlog(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='study/images/', null=True, blank=True)
-    background = models.ForeignKey(Background, on_delete=models.CASCADE, null=True)
+    background_image = models.ImageField(upload_to='study/base/', null=True)
     description = models.TextField()
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
